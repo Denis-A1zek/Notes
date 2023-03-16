@@ -1,10 +1,9 @@
-using Microsoft.Extensions.DependencyInjection;
+using Notes.Application;
 using Notes.Application.Interfaces;
 using Notes.Application.Mappings;
+using Notes.Persistence;
 using Notes.WebApi.Definitions.DbContext;
 using System.Reflection;
-using Notes.Application;
-using Notes.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
