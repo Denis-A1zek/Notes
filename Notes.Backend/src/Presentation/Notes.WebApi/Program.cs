@@ -2,6 +2,7 @@ using Notes.Application;
 using Notes.Application.Interfaces;
 using Notes.Application.Mappings;
 using Notes.Persistence;
+using Notes.WebApi.Common.Extensions;
 using Notes.WebApi.Definitions.DbContext;
 using System.Reflection;
 
@@ -27,6 +28,8 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+app.UseCustomExceptionHandler();  
 
 app.UseRouting();
 app.UseHttpsRedirection();
