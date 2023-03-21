@@ -95,4 +95,11 @@ public class AuthController : Controller
         ModelState.AddModelError(string.Empty, "Error occurred");
         return View(viewModel);
     }
+
+    public async Task<IActionResult> Logout(string logoutId)
+    {
+        await _signInManager.SignOutAsync();
+        var logoutRequest = await _interaction.GetLogoutContextAsync(logoutId);
+        return Redirect(logoutRequest.PostLogoutRedirectUri);
+    }
 }
